@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: demo-app
 spec:
   selector:
     matchLabels:
@@ -24,4 +23,3 @@ spec:
             memory: 100Mi
         ports:
         - containerPort: 80
-
