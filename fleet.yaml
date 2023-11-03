@@ -1,0 +1,22 @@
+targetCustomizations:
+- name: ingress-whitecloud
+  clusterSelector:
+    matchLabels:
+      cluster: whitecloud
+  yaml:
+    overlays:
+    - whitecloud
+- name: ingress-aws
+  clusterSelector:
+    matchLabels:
+      cluster: aws
+  yaml:
+    overlays:
+    - aws
+- name: ingress-azure
+  clusterSelector:
+    matchLabels:
+      cluster: azure
+  yaml:
+    overlays:
+    - azure
