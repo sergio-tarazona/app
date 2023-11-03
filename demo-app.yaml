@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: demo-app
+spec:
+  selector:
+    matchLabels:
+      app: demo-app
+      tier: frontend
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: demo-app
+        tier: frontend
+    spec:
+      containers:
+      - name: testapp
+        image: nginxdemos/hello
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 80
+

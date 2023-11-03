@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  namespace: demo-app
+  labels:
+    app: testapp
+    tier: frontend
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    app: demo-app
+    tier: frontend
+
